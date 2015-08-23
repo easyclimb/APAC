@@ -26,11 +26,11 @@ bool bfs(vector<vector<int>>& graph, int start, int n) {
             if(color[id_cur] == -1) {
                 color[id_cur] = (color[id] + 1)%2;
                 visit[id_cur] = true;
+                queue.push(id_cur);
             }
             else {
                 if(color[id_cur] == color[id]) return false;
             }
-            que.push(id_cur);
         }
     }
     for(int i = 0; i < n; i++)
